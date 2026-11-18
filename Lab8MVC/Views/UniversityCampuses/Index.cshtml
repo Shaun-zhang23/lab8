@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Lab8MVC.Models.UniversityCampus>
+
+@{
+    ViewBag.Title = "University Campuses";
+}
+
+<h2>University Campuses</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Name)*@
+                @* Turn the campus name into a hyperlink that filters the students list *@
+                @Html.ActionLink(item.Name, "Index", "Students", new { campus = item.Name }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

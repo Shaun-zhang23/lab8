@@ -1,0 +1,16 @@
+# Visual Studio cache/runtime
+.vs/
+*.user
+*.suo
+
+# Build outputs
+bin/
+obj/
+
+# NuGet packages cache
+packages/
+
+# LocalDB runtime files
+*.mdf
+*.ldf
+*.mdf.bak
